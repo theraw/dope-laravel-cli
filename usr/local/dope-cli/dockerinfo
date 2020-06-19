@@ -1,2 +1,15 @@
 #!/bin/bash
+if [ "$1" == "dockerinfo" ] && [ "$2" ]; then
+version=$(docker info | grep ' Server Version: ' | sed -r 's/ Server Version: //g')
+containers=$(docker info | grep ' Containers: ' | sed -r 's/ Containers: //g')
+running=$(docker info | grep '  Running: ' | sed -r 's/  Running: //g')
+ddriver=$(docker info | grep ' Storage Driver: ' | sed -r 's/ Storage Driver: //g')
+os=$(docker info | grep ' Operating System: ' | sed -r 's/ Operating System: //g')
+ram=$(docker info | grep ' Total Memory: ' | sed -r 's/ Total Memory: //g' | cut -f1 -d ".")
+hostname=$(docker info | grep ' Name: ' | sed -r 's/ Name: //g')
+virt=$(hostnamectl | grep Virtualization | sed -r 's/Virtualization://g' | sed -r 's/ //g')
+cpumodel=$(lscpu | grep 'Model name:' | sed -r 's/Model name:            //g')
+cpus=$(docker info | grep ' CPUs: ' | sed -r 's/ CPUs: //g')
 
+echo $2;
+fi
