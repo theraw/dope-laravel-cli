@@ -1,4 +1,4 @@
 #!/bin/bash
-d=/usr/local/dope-cli/
+d=/usr/local/dope-cli
 . /usr/local/dope-cli/check
 . $d/dockerinfo
