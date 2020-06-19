@@ -1,0 +1,9 @@
+#!/bin/bash
+if [[ "`curl -s https://raw.githubusercontent.com/theraw/dope-laravel-cli/master/version.json`" == "`curl -s https://raw.githubusercontent.com/theraw/dope-laravel-cli/master/release.json`" ]]; then
+   echo 'Seems Up To Date!';
+   clear
+   else
+      echo 'Version of dope-cli is out of date! Please keep up with planet and update this!';
+      echo 'dope-cli update';
+      sleep 15
+fi
