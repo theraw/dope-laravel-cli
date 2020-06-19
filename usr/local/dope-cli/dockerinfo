@@ -10,31 +10,6 @@ hostname=$(docker info | grep ' Name: ' | sed -r 's/ Name: //g')
 virtd=$(hostnamectl | grep Virtualization | sed -r 's/Virtualization://g' | sed -r 's/ //g')
 cpumodel=$(lscpu | grep 'Model name:' | sed -r 's/Model name:            //g')
 cpus=$(docker info | grep ' CPUs: ' | sed -r 's/ CPUs: //g')
-echo '
-[
-  {
-    "version": "'$version'"
-  },
-  {
-    "running": "'$running'"
-  },
-  {
-    "ddriver": "'$ddriver'"
-  },
-  {
-    "os": "'$os'"
-  },
-  {
-    "ram": "'$ram'"
-  },
-  {
-    "virtd": "'$virtd'"
-  },
-  {
-    "cpumodel": "'$cpumodel'"
-  },
-  {
-    "cpus": "'$cpus'"
-  }
-]';
+
+echo '[{"version":'$version',"running":"'$running'","ddriver":"'$ddriver'","os":'$os',"ram":'$ram',"virtd":'$virtd',"cpumodel":'$cpumodel',"cpus":'$cpus'}]';
 fi
