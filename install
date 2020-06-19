@@ -1,0 +1,9 @@
+#!/bin/bash
+export GET="raw.githubusercontent.com/theraw/dope-laravel-cli/master/usr/local/dope-cli"
+
+curl -s https://raw.githubusercontent.com/theraw/dope-laravel-cli/master/dope-cli > /bin/dope-cli
+mkdir -p /usr/local/dope-cli/
+cd /usr/local/dope-cli/
+
+curl -s -O https://$GET/check
+curl -s -O https://$GET/dockerinfo
