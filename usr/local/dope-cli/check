@@ -5,5 +5,5 @@ if [[ "`curl -s https://raw.githubusercontent.com/theraw/dope-laravel-cli/master
    else
       echo 'Version of dope-cli is out of date! Please keep up with planet and update this!';
       echo 'dope-cli update';
-      sleep 15
+      sleep 30
 fi
