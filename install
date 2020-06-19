@@ -7,3 +7,7 @@ cd /usr/local/dope-cli/
 
 curl -s -O https://$GET/check
 curl -s -O https://$GET/dockerinfo
+
+
+chmod +x /bin/dope-cli
+chmod +x /usr/local/dope-cli/*
